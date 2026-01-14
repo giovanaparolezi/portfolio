@@ -6,11 +6,19 @@
     cursor.style.top = e.clientY + 'px';
   });
 
-  /* REVEAL */
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => e.isIntersecting && e.target.classList.add('show'));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
   });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}, {
+  threshold: 0.15
+});
+
+document.querySelectorAll(
+  ".reveal, .reveal-left, .reveal-right, .reveal-zoom"
+).forEach(el => observer.observe(el));
 
   /* TEMA */
   const themeMode = document.getElementById("theme-mode");
@@ -89,4 +97,48 @@ function closeModalById(id) {
   obs.observe(reveal);
   
 
-  
+  const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+const themeToggle = document.getElementById("theme-mode");
+const themeIcon = document.getElementById("themeIcon");
+const body = document.body;
+
+/* carregar tema salvo */
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+  body.classList.add("light");
+  themeToggle.checked = true;
+  themeIcon.textContent = "☀️";
+} else {
+  themeIcon.textContent = "🌙";
+}
+
+/* alternar tema */
+themeToggle.addEventListener("change", () => {
+  body.classList.toggle("light");
+
+  if (body.classList.contains("light")) {
+    themeIcon.textContent = "☀️";
+    localStorage.setItem("theme", "light");
+  } else {
+    themeIcon.textContent = "🌙";
+    localStorage.setItem("theme", "dark");
+  }
+});
+

@@ -33,9 +33,8 @@ body {
     radial-gradient(600px circle at 50% 50%, rgba(124,58,237,0.05), transparent 50%);
 }
 
-/* =======================
-   LIGHT MODE — PREMIUM
-======================= */
+/*
+   LIGHT MODE */
 
 body.light {
   background: linear-gradient(180deg, #fafafa, #f1f3f9);
@@ -1072,4 +1071,59 @@ header {
 .filter-btn.active {
   background: #8a5cf6;
   border-color: #8a5cf6;
+}
+/* BOTÃO TEMA */
+.theme-btn {
+  position: relative;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  transition: transform .3s ease;
+}
+
+/* CÍRCULO ATRÁS DO ÍCONE */
+.theme-btn::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  z-index: -1;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(124,58,237,0.6),
+    rgba(124,58,237,0.25),
+    transparent 70%
+  );
+
+  filter: blur(6px);
+  opacity: 0.9;
+  transition: all .4s ease;
+}
+
+/* HOVER */
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+.theme-btn:hover::before {
+  filter: blur(2px);
+  transform: scale(1.15);
+}
+
+/* LIGHT MODE — sol */
+body.light .theme-btn::before {
+  background: radial-gradient(
+    circle,
+    rgba(250,204,21,0.6),
+    rgba(250,204,21,0.3),
+    transparent 70%
+  );
 }

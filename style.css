@@ -294,7 +294,28 @@ header {
 
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
+}.terminal .pre {
+  white-space: pre-wrap;      /* permite quebra de linha */
+  word-break: break-word;     /* quebra palavras grandes */
+  overflow-x: hidden;         /* impede scroll horizontal */
+  max-width: 100%;
 }
+.terminal,
+.body {
+  max-width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 640px) {
+  .card {
+    min-width: unset;   /* REMOVE o min-width que quebra tudo */
+    width: 100%;
+  }
+
+  .terminal {
+    font-size: 0.85rem; /* deixa mais proporcional */
+  }
+}
+
 .head {
   display: flex;
   align-items: center;

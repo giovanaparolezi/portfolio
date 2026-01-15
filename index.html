@@ -312,113 +312,226 @@ Visualizar CV  </button>
 </section>
 
 
-
 <!-- PROJETOS -->
 <section id="projetos" class="py-24 px-6 max-w-6xl mx-auto reveal">
-<h2 class="text-3xl font-semibold mb-4 text-center">
-  Projetos e soluções desenvolvidas
-</h2>
-<p class="text-center text-neutral-400 mb-12 max-w-2xl mx-auto">
-  Aplicações desenvolvidas com foco em usabilidade, organização de código
-  e entregas bem definidas. Cada projeto reflete compromisso com qualidade,
-  clareza e resultados.
-</p>
 
+  <h2 class="text-3xl font-semibold mb-4 text-center">
+    Projetos e soluções desenvolvidas
+  </h2>
 
-<div class="grid md:grid-cols-2 gap-10">
+  <p class="text-center text-neutral-400 mb-12 max-w-2xl mx-auto">
+    Aplicações desenvolvidas com foco em usabilidade, organização de código
+    e entregas bem definidas. Cada projeto reflete compromisso com qualidade,
+    clareza e resultados.
+  </p>
 
-  <div class="project-card" onclick="openModal('modal1')">
-    <img src="humanize.jpg" alt="Projeto Humanize">
-    <div class="project-info">
-      <h3>Humanize</h3>
-      <p>HTML • CSS • JS • APIs</p>
-    </div>
+  <!-- FILTROS -->
+  <div class="flex justify-center gap-4 mb-12 flex-wrap">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="frontend">Front-end</button>
+    <button class="filter-btn" data-filter="backend">Back-end</button>
+    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
   </div>
 
-  <div class="project-card" onclick="openModal('modal2')">
-    <img src="plataforma.jpg" alt="Plataforma de Estudos">
-    <div class="project-info">
-      <h3>Plataforma de Estudos</h3>
-      <p>Front-end • UI/UX</p>
+  <!-- GRID -->
+  <div class="grid md:grid-cols-2 gap-10">
+
+    <div class="project-card" data-category="fullstack" onclick="openModal('modal1')">
+      <img src="humanize.jpg" alt="Humanize">
+      <div class="project-info">
+        <h3>Agência de Publicidade – Humanize</h3>
+        <p>HTML • CSS • JS • APIs • Back-end</p>
+      </div>
     </div>
+
+    <div class="project-card" data-category="backend" onclick="openModal('modal2')">
+      <img src="plataforma.jpg" alt="Restaurante Oriental">
+      <div class="project-info">
+        <h3>Restaurante Oriental</h3>
+        <p>PHP • MySQL • HTML • CSS • JS</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="frontend" onclick="openModal('modal3')">
+      <img src="plataforma.jpg" alt="Plataforma de Estudos">
+      <div class="project-info">
+        <h3>Plataforma de Estudos</h3>
+        <p>Front-end • UI/UX • JS</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="backend" onclick="openModal('modal4')">
+      <img src="plataforma.jpg" alt="Planejamento Pessoal">
+      <div class="project-info">
+        <h3>Sistema de Planejamento Pessoal</h3>
+        <p>PHP • MySQL • HTML • CSS • JS</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="backend" onclick="openModal('modal5')">
+      <img src="plataforma.jpg" alt="Agendamento">
+      <div class="project-info">
+        <h3>Sistema de Agendamento</h3>
+        <p>PHP • MySQL • HTML • CSS • JS</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="frontend" onclick="openModal('modal6')">
+      <img src="plataforma.jpg" alt="Plataforma Nutricional">
+      <div class="project-info">
+        <h3>Plataforma Nutricional</h3>
+        <p>Front-end • UI/UX • JavaScript</p>
+      </div>
+    </div>
+
   </div>
-
-</div>
-
 </section>
+<!-- MODAL 1 — HUMANIZE -->
 <div id="modal1" class="modal">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModalById('modal1')">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-        <path d="M18 6L6 18M6 6l12 12"/>
-      </svg>
-    </button>
-
-    <h3 class="text-2xl font-semibold mb-4">Humanize</h3>
-
+    <button class="modal-close" onclick="closeModalById('modal1')">✕</button>
+    <h3 class="text-2xl font-semibold mb-4">Agência Humanize</h3>
     <video src="video-humanize.mp4" controls></video>
-
     <p class="text-neutral-300 mb-6">
       Projeto desenvolvido em equipe com foco em experiência do usuário,
-      integração com APIs e Supabase.
+      integração com APIs e estrutura escalável para uma agência digital.
     </p>
-
-    <div class="flex gap-6 text-xl">
-      <a href="https://agencia-humanize.vercel.app" target="_blank" class="hover:text-roxo">
-        <i class="devicon-chrome-plain"></i>
+    <div class="flex gap-4">
+      <a href="https://agencia-humanize.vercel.app" target="_blank" class="contact-btn primary">
+        <i class="bi bi-box-arrow-up-right"></i><span>Acessar site</span>
       </a>
-      <a href="#" target="_blank" class="hover:text-roxo">
-        <i class="devicon-github-original"></i>
+      <a href="https://github.com/giovanaparolezi/AGENCIA-HUMANIZE.git" target="_blank" class="contact-btn">
+        <i class="bi bi-github"></i><span>Repositório</span>
       </a>
     </div>
   </div>
 </div>
 
+<!-- MODAL 2 — RESTAURANTE -->
 <div id="modal2" class="modal">
   <div class="modal-box">
-  <button class="modal-close" onclick="closeModalById('modal1')">
-      ✕
-    </button>
-
-    <h3 class="text-2xl font-semibold mb-4">Plataforma de Estudos</h3>
-
-    <video src="video-plataforma.mp4" controls></video>
-
+    <button class="modal-close" onclick="closeModalById('modal2')">✕</button>
+    <h3 class="text-2xl font-semibold mb-4">Restaurante Oriental</h3>
+    <video src="video-restaurante.mp4" controls></video>
     <p class="text-neutral-300 mb-6">
-      Plataforma educacional focada em organização de estudos,
-      UI moderna e experiência fluida.
+      Sistema completo para restaurante com gerenciamento de pedidos,
+      banco de dados e painel administrativo.
     </p>
-
-    <div class="flex gap-6 text-xl">
-      <a href="#" target="_blank" class="hover:text-roxo">
-        <i class="devicon-chrome-plain"></i>
+    <div class="flex gap-4">
+      <a href="#" target="_blank" class="contact-btn primary">
+        <i class="bi bi-box-arrow-up-right"></i><span>Ver sistema</span>
       </a>
-      <a href="#" target="_blank" class="hover:text-roxo">
-        <i class="devicon-github-original"></i>
+      <a href="#" target="_blank" class="contact-btn">
+        <i class="bi bi-github"></i><span>Repositório</span>
       </a>
     </div>
   </div>
 </div>
+
+<!-- MODAL 3 — PLATAFORMA DE ESTUDOS -->
+<div id="modal3" class="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalById('modal3')">✕</button>
+    <h3 class="text-2xl font-semibold mb-4">Plataforma de Estudos</h3>
+    <video src="video-plataforma.mp4" controls></video>
+    <p class="text-neutral-300 mb-6">
+      Plataforma educacional focada em organização de estudos,
+      usabilidade e interface moderna.
+    </p>
+    <div class="flex gap-4">
+      <a href="#" target="_blank" class="contact-btn primary">
+        <i class="bi bi-box-arrow-up-right"></i><span>Acessar projeto</span>
+      </a>
+      <a href="#" target="_blank" class="contact-btn">
+        <i class="bi bi-github"></i><span>Repositório</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 4 — PLANEJAMENTO -->
+<div id="modal4" class="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalById('modal4')">✕</button>
+    <h3 class="text-2xl font-semibold mb-4">Planejamento Pessoal</h3>
+    <video src="video-planejamento.mp4" controls></video>
+    <p class="text-neutral-300 mb-6">
+      Sistema web para organização de tarefas, metas e rotinas,
+      com persistência de dados.
+    </p>
+    <div class="flex gap-4">
+      <a href="#" target="_blank" class="contact-btn primary">
+        <i class="bi bi-box-arrow-up-right"></i><span>Ver sistema</span>
+      </a>
+      <a href="#" target="_blank" class="contact-btn">
+        <i class="bi bi-github"></i><span>Repositório</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 5 — AGENDAMENTO -->
+<div id="modal5" class="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalById('modal5')">✕</button>
+    <h3 class="text-2xl font-semibold mb-4">Sistema de Agendamento</h3>
+    <video src="video-agendamento.mp4" controls></video>
+    <p class="text-neutral-300 mb-6">
+      Aplicação para agendamento de serviços com controle de horários
+      e usuários.
+    </p>
+    <div class="flex gap-4">
+      <a href="#" target="_blank" class="contact-btn primary">
+        <i class="bi bi-box-arrow-up-right"></i><span>Acessar sistema</span>
+      </a>
+      <a href="#" target="_blank" class="contact-btn">
+        <i class="bi bi-github"></i><span>Repositório</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 6 — NUTRICIONAL -->
+<div id="modal6" class="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalById('modal6')">✕</button>
+    <h3 class="text-2xl font-semibold mb-4">Plataforma Nutricional</h3>
+    <video src="video-nutricional.mp4" controls></video>
+    <p class="text-neutral-300 mb-6">
+      Interface front-end voltada ao acompanhamento nutricional,
+      com foco em UI/UX.
+    </p>
+    <div class="flex gap-4">
+      <a href="#" target="_blank" class="contact-btn primary">
+        <i class="bi bi-box-arrow-up-right"></i><span>Ver projeto</span>
+      </a>
+      <a href="#" target="_blank" class="contact-btn">
+        <i class="bi bi-github"></i><span>Repositório</span>
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- CONTATO -->
 <section id="contato" class="relative min-h-screen pt-32 px-6 flex items-end justify-center reveal">
 
-  <!-- Blur decorativo -->
+ 
   <div class="absolute -top-32 -left-32 w-96 h-96 bg-roxo/30 rounded-full blur-3xl"></div>
 
   <div class="contact-glass max-w-3xl w-full text-center relative z-10">
 
-    <!-- TÍTULO -->
+ 
     <h2 class="text-4xl md:text-5xl font-bold mb-4">
       Vamos criar algo juntos
     </h2>
 
-    <!-- DESCRIÇÃO -->
+
 <p class="text-neutral-300 mb-12 max-w-xl mx-auto">
   Para oportunidades, projetos ou parcerias, entre em contato pelos canais abaixo.
 </p>
 
-<!-- CONTATOS PRINCIPAIS -->
-<div class="contact-actions grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+
+<div class="contact-actions flex justify-center gap-6 flex-wrap mb-16">
 
   <a href="mailto:giovanaparolezi@gmail.com" class="contact-btn">
     <i class="bi bi-envelope"></i>
@@ -435,27 +548,20 @@ Visualizar CV  </button>
     <span>GitHub</span>
   </a>
 
-</div>
-
-<!-- WHATSAPP DISCRETO -->
-<div class="flex justify-center">
-  <a href="https://wa.me/55SEUNUMERO?text=Olá,%20Giovana!%20Gostaria%20de%20conversar%20sobre%20um%20projeto."
+  <a href="https://wa.me/5516996240551?text=Olá,%20Giovana!%20Gostaria%20de%20conversar%20sobre%20um%20projeto."
      target="_blank"
-     class="contact-btn whatsapp-mini">
+     class="contact-btn">
     <i class="bi bi-whatsapp"></i>
     <span>WhatsApp</span>
   </a>
+
 </div>
+
 
 
   </div>
 </section>
 
-
-
-
-
-  
 <script src="main.js"></script>
 
 

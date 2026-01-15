@@ -48,9 +48,7 @@ function closeModalById(id) {
   document.getElementById(id)?.classList.remove("active");
 }
 
-/* =========================
-   PROJECT CARD 3D
-========================= */
+
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();
@@ -68,9 +66,7 @@ document.querySelectorAll('.project-card').forEach(card => {
   });
 });
 
-/* =========================
-   CONTACT SHAPE SCROLL
-========================= */
+
 const section = document.querySelector('.contactx-section');
 const shape = document.querySelector('.contactx-shape');
 
@@ -89,9 +85,7 @@ if (section && shape) {
   });
 }
 
-/* =========================
-   REVEAL CONTACT
-========================= */
+
 const revealContact = document.querySelector('.reveal-contact');
 
 if (revealContact) {
@@ -106,9 +100,7 @@ if (revealContact) {
   obs.observe(revealContact);
 }
 
-/* =========================
-   BACK TO TOP
-========================= */
+
 const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
@@ -125,9 +117,7 @@ backToTop?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-/* =========================
-   THEME MODE (FIX DEFINITIVO)
-========================= */
+//tema 
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("theme-mode");
   const icon = document.getElementById("themeIcon");
@@ -147,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  /* carregar tema salvo */
+
   const savedTheme = localStorage.getItem("theme") || "dark";
   applyTheme(savedTheme);
 
@@ -158,3 +148,26 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("theme", newTheme);
   });
 });
+
+
+//filtro projetos
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projects = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const filter = button.dataset.filter;
+
+    projects.forEach(project => {
+      const category = project.dataset.category;
+
+      project.style.display =
+        filter === 'all' || category === filter ? 'block' : 'none';
+    });
+  });
+});
+

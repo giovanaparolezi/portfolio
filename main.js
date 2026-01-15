@@ -129,11 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (theme === "light") {
       body.classList.add("light");
       toggle.checked = true;
-      icon.textContent = "☀️";
+      icon.textContent = "🌙";
     } else {
       body.classList.remove("light");
       toggle.checked = false;
-      icon.textContent = "🌙";
+      icon.textContent = "☀️";
     }
   }
 

@@ -171,3 +171,19 @@ filterButtons.forEach(button => {
   });
 });
 
+const sections = document.querySelectorAll("section");
+const navRadios = document.querySelectorAll(".wrap-menu input");
+
+// Função para ativar a aba de acordo com o scroll
+function updateMenuOnScroll() {
+  let scrollPos = window.scrollY + window.innerHeight / 3; // ajuste fino
+
+  sections.forEach((section, index) => {
+    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+      navRadios[index].checked = true;
+    }
+  });
+}
+
+// Chamar a função quando o usuário der scroll
+window.addEventListener("scroll", updateMenuOnScroll);
